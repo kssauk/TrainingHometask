@@ -16,15 +16,18 @@ public class FileReader implements Reader {
 
         File fileDir = new File(scan.nextLine());
 
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir)));
-        final StringBuffer text = new StringBuffer();
-        String line;
-        while ((line = in.readLine()) != null) {
-            text.append(line + "\n");
-        }
+        StringBuffer text;
+        Sentence sentence;
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(fileDir)))) {
+            text = new StringBuffer();
+            String line;
+            while ((line = in.readLine()) != null) {
+                text.append(line + "\n");
+            }
 
-        in.close();
-        Sentence sentence = new Sentence(String.valueOf(text));
+            in.close();
+        }
+        sentence = new Sentence(text.toString());
 
         return sentence;
     }

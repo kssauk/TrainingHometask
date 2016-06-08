@@ -4,24 +4,36 @@ import com.epam.entity.Sentence;
 
 public class Printer {
 
+    private static final String SENTENCE = "Sentence - ";
+
+    private static final String WORDS = "Words - ";
+
+    private static final String SENTENCE_IS_EMPTY = "Sentence is empty";
+
+    private static final String ENTER_STRING = "Enter string, please";
+
+    private static final String ENTER_CORRECT_NUMBER = "Enter correct number, please";
+
+    private static final String ENTER_FILE_PATH = "Enter string, please";
+
     public static void printSentenceString(Sentence sentence) {
-        if (sentence.getSentenceString() != null) {
-            System.out.println("Sentence - " + sentence.getSentenceString());
+        if (sentence.getSentenceString() != null && sentence.getSentenceString().trim() != "") {
+            System.out.println(SENTENCE + sentence.getSentenceString());
         } else {
-            System.out.println("Sentence is empty");
+            System.out.println(SENTENCE_IS_EMPTY);
         }
     }
 
     public static void printSentenceWords(Sentence sentence) {
-        if (!sentence.getSentence().isEmpty()) {
-            System.out.println("Words - " + sentence.getSentenceString());
+        if (sentence.getSentence() != null) {
+            System.out.println(WORDS + sentence.getSentence());
         } else {
-            System.out.println("Sentence is empty");
+            System.out.println(SENTENCE_IS_EMPTY);
         }
     }
 
     public static void printAfterInputStringMessage() {
-        System.out.println("Please, enter string");
+        System.out.println(ENTER_STRING);
     }
 
     public static void printReaderMenuConditions() {
@@ -38,10 +50,10 @@ public class Printer {
     }
 
     public static void printMenuError() {
-        System.out.println("Please, enter correct number");
+        System.out.println(ENTER_CORRECT_NUMBER);
     }
 
     public static void printAfterInputFilePathMessage() {
-        System.out.println("Please, enter file path (For example : D:\\Document.doc)");
+        System.out.println(ENTER_FILE_PATH);
     }
 }

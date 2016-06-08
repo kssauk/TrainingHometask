@@ -17,6 +17,8 @@ public class Menu {
 
     private Reader reader;
 
+    private static final String ENTER_CORRECT_NUMBER = "Enter correct number, please";
+
     public Sentence checkReader() throws IOException {
         Printer.printReaderMenuConditions();
 
@@ -30,7 +32,7 @@ public class Menu {
                 reader = new FileReader();
                 break;
             default:
-                System.out.println("Enter please correct number");
+                System.out.println(ENTER_CORRECT_NUMBER);
                 checkReader();
                 break;
         }
@@ -70,4 +72,11 @@ public class Menu {
         }
         return sentence;
     }
+
+    public class CLS {
+        public void main(String... arg) throws IOException, InterruptedException {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        }
+    }
+
 }
