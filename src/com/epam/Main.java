@@ -15,12 +15,9 @@ public class Main {
 
         menu.checkAction(sentence);
 
-        //Runtime.getRuntime().exec("cls");
-
         Printer.printSentenceString(sentence);
 
         Printer.printSentenceWords(sentence);
 
-        //Runtime.getRuntime().exec("cls");
     }
 }
