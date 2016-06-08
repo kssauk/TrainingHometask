@@ -14,7 +14,7 @@ public class Printer {
 
     private static final String ENTER_CORRECT_NUMBER = "Enter correct number, please";
 
-    private static final String ENTER_FILE_PATH = "Enter string, please";
+    private static final String ENTER_FILE_PATH = "Enter file path, please (For example : D:\\Document.txt)";
 
     public static void printSentenceString(Sentence sentence) {
         if (sentence.getSentenceString() != null && sentence.getSentenceString().trim() != "") {
@@ -26,7 +26,9 @@ public class Printer {
 
     public static void printSentenceWords(Sentence sentence) {
         if (sentence.getSentence() != null) {
-            System.out.println(WORDS + sentence.getSentence());
+            System.out.println(WORDS);
+            sentence.getSentence().forEach(s -> System.out.print(s.getWord() + " "));
+            System.out.println();
         } else {
             System.out.println(SENTENCE_IS_EMPTY);
         }

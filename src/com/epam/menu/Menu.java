@@ -60,10 +60,10 @@ public class Menu {
                 checkAction(sentence);
                 break;
             case "4":
-                checkReader();
-                checkAction(sentence);
+                checkAction(checkReader());
                 break;
             case "0":
+                System.exit(0);
                 break;
             default:
                 Printer.printMenuError();
@@ -72,11 +72,4 @@ public class Menu {
         }
         return sentence;
     }
-
-    public class CLS {
-        public void main(String... arg) throws IOException, InterruptedException {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        }
-    }
-
 }
