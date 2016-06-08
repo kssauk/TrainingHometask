@@ -14,7 +14,7 @@ public class Printer {
 
     private static final String ENTER_CORRECT_NUMBER = "Enter correct number, please";
 
-    private static final String ENTER_FILE_PATH = "Enter file path, please (For example : D:\\Document.txt)";
+    private static final String ENTER_FILE_PATH = "Enter file path, please (For example : C:\\Users\\PC\\IdeaProjects\\TrainingHometask\\file.txt)";
 
     public static void printSentenceString(Sentence sentence) {
         if (sentence.getSentenceString() != null && sentence.getSentenceString().trim() != "") {

@@ -24,7 +24,7 @@ public class FileReader implements Reader {
         }
 
         in.close();
-        Sentence sentence = new Sentence(String.valueOf(text));
+        Sentence sentence = new Sentence(text.toString());
 
         return sentence;
     }
